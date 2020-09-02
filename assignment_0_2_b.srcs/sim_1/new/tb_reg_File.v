@@ -27,7 +27,8 @@ begin
 end
 always #50 CLK <= ~CLK;
 //Instantiate DUT
-reg_File DUT( .CLK(CLK), .RFWE(RFWE), .RFR1(RFR1), 
+reg_File # ( .WL(WL), .MEM_Depth(MEM_Depth) )
+            DUT( .CLK(CLK), .RFWE(RFWE), .RFR1(RFR1), 
                 .RFR2(RFR2), .RFWA(RFWA), .RFWD(RFWD), 
                     .RFRD1(RFRD1), .RFRD2(RFRD2) );
 
