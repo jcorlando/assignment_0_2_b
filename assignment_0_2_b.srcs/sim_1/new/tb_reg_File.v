@@ -2,16 +2,18 @@
 
 module tb_reg_File;
 
+// Parameters
+parameter WL = 32, MEM_Depth = 32;
 //Inputs
 reg CLK;
 reg RFWE;
 reg [4:0] RFR1;
 reg [4:0] RFR2;
 reg [4:0] RFWA;
-reg [31:0] RFWD;
+reg [WL - 1 : 0] RFWD;
 //Outputs
-wire [31:0] RFRD1;
-wire [31:0] RFRD2;
+wire [WL - 1 : 0] RFRD1;
+wire [WL - 1 : 0] RFRD2;
 // Clock generation 
 initial
 begin
